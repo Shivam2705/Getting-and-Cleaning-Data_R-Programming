@@ -2,20 +2,27 @@
 
 #Getting and Cleaning Data Course Project CodeBook
 
+
+#Data Source
+
 This file describes the variables, the data, and any transformations or work that I have performed to clean up the data.
 
 
 Data Source:http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 Data required for project: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
 Description of run_analysis R- programming file:
 
-Loading Data:
+#Loading Data:
+
 	read.table(): Read X_train.txt, y_train.txt and subject_train.txt and store them in training_Data, training_Label and training_Subject variables respectively.
 
 	Similarly read X_test.txt, y_test.txt and subject_test.txt and store them in test_Data, test_Label and test_Subject variables respectively
-Concatenating data, labels and subjects:
+
+
+#Concatenating data, labels and subjects:
 
 	Concatenate test_Data to training_Data to generate a 10299x561 data frame, join_Data.
 
@@ -24,7 +31,8 @@ Concatenating data, labels and subjects:
 	Concatenate test_Subject to training_Subject to generate a 10299x1 data frame, join_Subject.
 
 
-Reading Data:
+#Reading Data:
+
 	Read the features.txt file and store the data in a variable called features. 
 
 	Extract the measurements on the mean and standard deviation. 
@@ -33,7 +41,8 @@ Reading Data:
 
 
 
-Analysis on Data:
+#Analysis on Data:
+
 	Clean the column names of the subset. We remove the "()" and "-" symbols in the names, as well as make the first letter of "mean" and "std" a capital letter "M" and "S" respectively.
 
 	Read the activity_labels.txt file and store the data in a variable called activity.
@@ -48,7 +57,8 @@ Analysis on Data:
 
 
 
-Writing Output Files:
+#Writing Output Files:
+
 	Write the cleaned_Data out to " merged_test&train_data.txt" file in current working directory.
 
 	Finally, generate a second independent tidy data set with the average of each measurement for each activity and each subject. Write the result out to " mean of data variables.txt" file in current working directory.
